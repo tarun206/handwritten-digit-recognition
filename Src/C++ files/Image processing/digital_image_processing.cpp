@@ -1,7 +1,7 @@
 class image_processing{
 private:
     int image[28][28];
-    char character_buffer[2];string image_stream = fileio.read_idx3_ubyte_one_line();
+    char character_buffer[2];
 public:
     void load_image()
     {
