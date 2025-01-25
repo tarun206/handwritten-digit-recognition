@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1737197153 source:/home/tarun/Projects/Code blocks projects/Mnist digit recognition/main.cpp
+	<iostream>
+	<vector>
+	<math.h>
+	<fstream>
+
