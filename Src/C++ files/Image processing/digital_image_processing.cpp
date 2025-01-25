@@ -63,8 +63,11 @@ public:
             }
         }
     }
-    void masking()
+    void invert_colours()
     {
-
+        for (int i = 0; i < 28; i++)
+            for (int j = 0; j < 28; j++)
+                image[i][j] = 256 - image[i][j];
     }
 }
+
