@@ -1,6 +1,6 @@
 class image_processing{
 private:
-    int image[28][28];
+    int image[28][28], ;
     char character_buffer[2];
 public:
     void load_image()
