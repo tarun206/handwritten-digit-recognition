@@ -27,21 +27,45 @@ public:
 
     double compute_log10(double X)
     {
-        double log10_X = 1, intermediate_result = 1;
+        double Y, intermediate_result = 10;
         long iterations = 0;
 
         while (1)
         {
-            /* Explanation of the below statements
-            *
+            /* Explanation of the below statements:
+            *  Intermediate result is initialized starting from 10.
+            *  The below for loop computes exponents of 10.
+            *  If the intermediate result is greater than X,
+            *  For, b^Y = X. Where, Y is the exponent to find and X is the result after exponentiation,
+            *  it divides the intermediate result with a dividend starting from 2 and increments if the intermediate result does not equal to X,
+            *  it increments the dividend.
+            *  If the intermediate result is less than X, it increments the iteration. So, that the for loop goes for another exponentiation.
+            *  If intermediate result equals X, it is assigned to Y and the while loop breaks.
             */
-            for (int i = 0; i < iterations; Y++)
+
+            for (int i = 0; i < iterations; i++)
+                intermediate_result = intermediate_result * 10;
+
+            if (intermediate_result > X)
             {
-                intermediate_result = 10 * 10;
-                if (log10_X = X)
-                    break;
+                long dividend = 2; //To lessen the amount of computation.
+
+                do{
+                    intermediate_result = intermediate_result/dividend;
+                    dividend++;
+                }(intermediate_result != X);
+
+                Y = intermediate_result;
+                break;
+            }
+            else if (intermediate_result < X)
+                iterations++;
+            else if(intermediate_result == X)
+            {
+                Y = intermediate_result;
+                break;
             }
         }
-        return log_X;
+        return Y;
     }
 }
