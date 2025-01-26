@@ -1,9 +1,13 @@
 # depslib dependency file v1.0
-1737197153 source:/home/tarun/Projects/Code blocks projects/Mnist digit recognition/main.cpp
+1737884695 source:/home/tarun/Projects/Code blocks projects/Mnist digit recognition/main.cpp
 	<iostream>
 	<vector>
 	<math.h>
 	<fstream>
+	<vulkan/vulkan.hpp>
+	<pthread.h>
+	<sys/types.h>
+	<CL/cl.h>
 
 1737787505 source:/home/tarun/Projects/Code blocks projects/Mnist digit recognition/src/C++ files/UI/vulkan.cpp
 

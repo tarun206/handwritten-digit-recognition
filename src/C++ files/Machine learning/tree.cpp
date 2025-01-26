@@ -5,7 +5,7 @@ struct node{
     vector<node*> edges;
 };
 
-class tree{
+class forest{
 public:
     node* instantiate_root(string label_to_insert, bool is_greater_than, bool is_less_than, bool is_equal_to, int comparator_value)
     {
@@ -27,5 +27,10 @@ public:
         new_node -> comparator_value = comparator_value;
         edges.push_back(new_node);
         return new_node;
+    }
+    bool destroy_tree()
+    {
+
+        return true;
     }
 };

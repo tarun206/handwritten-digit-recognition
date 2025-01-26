@@ -1,52 +1,45 @@
+#include <pthread.h>
+#include<sys/types.h>
+
 class round_robin{
 protected:
     int thread_counter = 0;
     kernel_management km;
-    pthread_t cpu_thread, gpu_thread;
+    pthread_t thread_array[2];
 public:
-    bool create_threads(bool create_cpu_thread, bool create_gpu_thread)
+    pthread_t* create_threads(bool create_cpu_thread, bool create_gpu_thread)
     {
+        int return_value;
         if (create_cpu_thread == true)
         {
-            pthread_t cpu_thread;
-            thread_array[0] = cpu_thread;
+            return_value = pthread_create(thread_array[0],,,);
+            if (return_value == 0)
+                break;
         }
-
         else if (create_gpu_thread == true)
         {
-            pthread_t gpu_thread;
-            thread_array[1] = gpu_thread;
+            return_value = pthread_create(thread_array[1]);
+            if (return_value == 0)
+                break;
         }
-        return true;
-    }
-
-    bool schedule_threads (bool schedule_cpu_thread, bool schedule_gpu_thread)
-    {
-        if (schedule_cpu_thread == true)
-        {
-            pthread_create(thread_array[0],,,);
-            return true;
-        }
-        else if (schedule_gpu_thread == true)
-        {
-            pthread_create(thread_array[1],,km.run_kernel(),);
-            return true;
-        }
-        return false;
+        return thread_array;
     }
 
     bool join_threads(bool join_cpu_thread, bool join_gpu_thread)
     {
+        int return_value = 0;
         if (join_cpu_thread == true)
         {
-            cpu_thread;
+            return_value = pthread_join(cpu_thread);
+            if (return_value == 0)
+                return true;
         }
-
         else if (join_gpu_thread)
         {
-            gpu_thread;
+            return_value = pthread_join(gpu_thread);
+            if (return_value == 0)
+                return true;
         }
-
         return false;
     }
 };

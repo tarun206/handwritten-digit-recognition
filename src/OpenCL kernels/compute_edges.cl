@@ -1,1 +1,4 @@
-__kernel void
+__kernel void dispatch_image()
+{
+
+}

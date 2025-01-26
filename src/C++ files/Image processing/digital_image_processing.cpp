@@ -1,6 +1,8 @@
+#include <iostream>
+
 class image_processing{
 private:
-    int image[28][28], ;
+    int image[28][28];
     char character_buffer[2];
 public:
     void load_image()
@@ -69,5 +71,5 @@ public:
             for (int j = 0; j < 28; j++)
                 image[i][j] = 256 - image[i][j];
     }
-}
+};
 

@@ -1,3 +1,5 @@
+#include <iostream>
+
 class mathematics{
 protected:
     double information_entropy = 0, P_X = 0, log10_P_X = 0, element_occurence = 0;
@@ -83,4 +85,4 @@ public:
 
         return information_entropy;
     }
-}
+};

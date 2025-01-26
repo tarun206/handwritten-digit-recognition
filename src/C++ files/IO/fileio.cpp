@@ -1,3 +1,5 @@
+#include <fstream>
+
 class fileio{
 protected:
     ifstream input_stream;
