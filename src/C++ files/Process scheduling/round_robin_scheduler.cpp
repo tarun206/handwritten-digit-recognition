@@ -2,21 +2,20 @@ class round_robin{
 protected:
     pthread_t thread_array [2];
     int thread_counter = 0;
+    kernel_management km;
 public:
-    bool create_threads()
+    bool create_threads(bool create_cpu_thread, bool create_gpu_thread)
     {
-        if (thread_counter == 0)
+        if (create_cpu_thread == true)
         {
             pthread_t cpu_thread;
             thread_array[0] = cpu_thread;
-            thread_counter++;
         }
 
-        else if (thread_counter == 1)
+        else if (create_gpu_thread == true)
         {
             pthread_t gpu_thread;
             thread_array[1] = gpu_thread;
-            thread_counter++;
         }
         return true;
     }
@@ -30,9 +29,25 @@ public:
         }
         else if (schedule_gpu_thread == true)
         {
-            pthread_create(thread_array[1],,,);
+            pthread_create(thread_array[1],,km.run_kernel(),);
             return true;
         }
+        return false;
+    }
+
+    bool join_threads(bool join_cpu_thread, bool join_gpu_thread)
+    {
+        if (join_cpu_thread == true)
+        {
+            pthread_t cpu_thread = thread_array[0];
+
+        }
+
+        else if (join_gpu_thread)
+        {
+            pthread_t gpu_thread = thread_array[1];
+        }
+
         return false;
     }
 };

@@ -1,4 +1,6 @@
 class mathematics{
+protected:
+    double information_entropy = 0;
 public:
     double sigmoid(double point)
     {
@@ -67,5 +69,10 @@ public:
             }
         }
         return Y;
+    }
+
+    double compute_information_entropy(double data_array[], double value_to_search_for)
+    {
+        return information_entropy;
     }
 }

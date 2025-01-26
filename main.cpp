@@ -6,6 +6,7 @@
 #include <vulkan/vulkan.hpp>
 #include <pthread.h>
 #include <sys/types.h>
+#include <CL/cl.h>
 
 using namespace std;
 
