@@ -1,6 +1,6 @@
 class mathematics{
 protected:
-    double information_entropy = 0;
+    double information_entropy = 0, P_X = 0, log10_P_X = 0;
 public:
     double sigmoid(double point)
     {
@@ -73,6 +73,9 @@ public:
 
     double compute_information_entropy(double data_array[], double value_to_search_for)
     {
+        P_X = probability(data_array,sizeof(data_array), value_to_search_for);
+        log10_P_X = compute_log10(P_X);
+        information_entropy = P_X * log10_P_X;
         return information_entropy;
     }
 }
