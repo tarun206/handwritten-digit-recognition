@@ -1,8 +1,8 @@
 class round_robin{
 protected:
-    pthread_t thread_array [2];
     int thread_counter = 0;
     kernel_management km;
+    pthread_t cpu_thread, gpu_thread;
 public:
     bool create_threads(bool create_cpu_thread, bool create_gpu_thread)
     {
@@ -39,13 +39,12 @@ public:
     {
         if (join_cpu_thread == true)
         {
-            pthread_t cpu_thread = thread_array[0];
-
+            cpu_thread;
         }
 
         else if (join_gpu_thread)
         {
-            pthread_t gpu_thread = thread_array[1];
+            gpu_thread;
         }
 
         return false;
