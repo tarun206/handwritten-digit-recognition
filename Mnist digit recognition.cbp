@@ -45,7 +45,6 @@
 		<Unit filename="src/C++ files/IO/fileio.cpp" />
 		<Unit filename="src/C++ files/Image processing/digital_image_processing.cpp" />
 		<Unit filename="src/C++ files/Machine learning/decision_tree.cpp" />
-		<Unit filename="src/C++ files/Machine learning/tree.cpp" />
 		<Unit filename="src/C++ files/Mathematics/mathematics.cpp" />
 		<Unit filename="src/C++ files/Process scheduling/round_robin_scheduler.cpp" />
 		<Unit filename="src/C++ files/UI/vulkan.cpp" />
