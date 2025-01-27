@@ -123,7 +123,8 @@ public:
             {
                 if (j+1 == 28-1)
                     continue;
-                else{
+                else
+                {
                     current_pixel_value = image[i][j];
                     next_pixel_value = image[i][j+1];
                     pixel_diffrence = current_pixel_value - next_pixel_value;
@@ -141,4 +142,3 @@ public:
         }
     }
 };
-
