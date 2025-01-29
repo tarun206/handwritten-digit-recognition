@@ -76,8 +76,6 @@ public:
 
     void count_spikes_and_push_to_dataset()
     {
-        int large_pixel_difference = 0, current_pixel = 0, next_pixel = 0, pixel_difference = 0;
-        long spike_count = 0;
 
         /** Explanation of below statements:
         *   the below loops go over the image and subtract the pixel values.
@@ -89,23 +87,6 @@ public:
         *   4 can be determined by 4 spikes in pixel values.
         */
 
-        for (int i = 0; i < 28; i++)
-            for (int j = 0; j < 28; j++)
-            {
-                if (j == 28-1)
-                    break;
-                else{
-
-                    current_pixel = image[i][j];
-                    next_pixel = image[i][j+1];
-                    pixel_difference = current_pixel - next_pixel;
-
-                    if (pixel_difference > 100)
-                        spike_count++;
-                }
-            }
-        dataset.push_back(spike_count);
-        return dataset;
     }
 
     void calculate_radius_and_push_to_dataset()
@@ -113,32 +94,5 @@ public:
         /** Explanation of the below statements:
         *   Calculates the distance between the first spike in pixel values and the second spike in pixel values.
         */
-
-        int current_pixel_value = 0, next_pixel_value = 0, pixel_difference = 0;
-        long first_spike_pixel = 0, second_spike_pixel = 0, radius = 0;
-
-        for (int i = 0; i < 28; i++)
-        {
-            for (int j = 0; j < 28; j++)
-            {
-                if (j+1 == 28-1)
-                    continue;
-                else
-                {
-                    current_pixel_value = image[i][j];
-                    next_pixel_value = image[i][j+1];
-                    pixel_diffrence = current_pixel_value - next_pixel_value;
-                    if (pixel_diffrence > 100)
-                    {
-                        if (first_spike_pixel == 0)
-                            first_spike_pixel = (i+j+1);
-                        else if (first_spike_pixel > 0 && second_spike_pixel == 0)
-                            second_spike_pixel = (i+j+1);
-                    }
-                }
-            }
-            radius = first_spike_pixel - second_spike_pixel;
-            radius_dataset.push_back(radius);
-        }
     }
 };

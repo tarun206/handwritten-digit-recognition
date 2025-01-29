@@ -7,7 +7,6 @@ struct node{
     node *right; // Greater than the value being compared.
     node * middle; // Equal to the value being compared.
     node *previous; // Pointer to the previous node.
-    vector <node*> edges;
 };
 
 class decision_tree{
@@ -41,6 +40,9 @@ public:
         current_node -> left = left_node_to_put;
         current_node -> middle = middle_node_to_put;
         current_node -> right = right_node_to_put;
+
+        if (current_node -> left == NULL || current_node -> right == NULL || current_node -> right == NULL)
+
         current_node -> previous = previous_node;
         return current_node;
     }
@@ -84,16 +86,9 @@ public:
             radius_entropy = entropy + (P_X * log10_P_X);
         }
 
-        if ((spike_entropy + radius_entropy) >= 0.53)
+        if ((spike_entropy * radius_entropy) >= 0.53)
             return true;
 
         return false;
-    }
-    node* train_decision_tree(vector<long> spike_dataset. vector<long> radius_dataset)
-    {
-        node *root = instantiate_root("initial label");
-        node *current_node = root;
-        node *new_node = insert_node();
-        return root;
     }
 };
