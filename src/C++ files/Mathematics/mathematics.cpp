@@ -73,12 +73,12 @@ public:
         return Y;
     }
 
-    double compute_information_entropy(double data_array[], double values_to_search_for[])
+    double compute_information_entropy(double data_array[], double X)
     {
 
         for (int i = 0 ; i < sizeof(values_to_search_for); i++)
         {
-            P_X = probability(data_array, sizeof(data_array),values_to_search_for[i]);
+            P_X = probability(data_array, sizeof(data_array), X);
             log10_P_X = compute_log10(P_X);
             information_entropy = information_entropy + (P_X * log10_P_X);
         }

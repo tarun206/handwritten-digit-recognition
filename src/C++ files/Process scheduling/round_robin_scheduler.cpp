@@ -6,6 +6,7 @@ protected:
     int thread_counter = 0;
     kernel_management km;
     pthread_t cpu_thread, gpu_thread;
+    bool scheduled[2];
 public:
     bool create_threads(bool create_cpu_thread, bool create_gpu_thread)
     {
@@ -25,16 +26,22 @@ public:
         return false;
     }
 
-    bool join_threads(bool join_cpu_thread, bool join_gpu_thread)
+    bool schedule_threads ()
+    {
+        if (scheduled[0] == true)
+        else if (scheduled[1] == true)
+    }
+
+    bool join_thread(bool exit_cpu_thread, bool exit_gpu_thread)
     {
         int return_value = 0;
-        if (join_cpu_thread == true)
+        if (exit_cpu_thread == true)
         {
             return_value = pthread_join(cpu_thread);
             if (return_value == 0)
                 return true;
         }
-        else if (join_gpu_thread)
+        else if (exit_gpu_thread)
         {
             return_value = pthread_join(gpu_thread);
             if (return_value == 0)

@@ -46,9 +46,10 @@
 		<Unit filename="src/C++ files/Image processing/digital_image_processing.cpp" />
 		<Unit filename="src/C++ files/Machine learning/decision_tree.cpp" />
 		<Unit filename="src/C++ files/Mathematics/mathematics.cpp" />
-		<Unit filename="src/C++ files/Process scheduling/round_robin_scheduler.cpp" />
 		<Unit filename="src/C++ files/UI/vulkan.cpp" />
-		<Unit filename="src/OpenCL kernels/compute_edges.cl" />
+		<Unit filename="src/OpenCL kernels/compute_radius.cl" />
+		<Unit filename="src/OpenCL kernels/compute_spikes.cl" />
+		<Unit filename="src/OpenCL kernels/train_tree.cl" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
